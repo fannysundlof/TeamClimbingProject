@@ -1,0 +1,114 @@
+.container {
+  display: grid;
+  justify-items: center;
+  background: url(/img/bg-invoice.jpeg);
+  height: 100%;
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+.invoice {
+  margin: 1rem;
+  width: 38rem;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  color: $bg-col;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  box-shadow: $shadow2;
+}
+
+//------- Invoice header ------- //
+.invoice__header {
+  border-bottom: 2px solid black;
+  margin: 0 0 0 1rem;
+}
+.invoice__header-logo {
+  max-width: 7rem;
+  margin: 5% 0 5% 15%;
+  border-radius: 50% 50% 50% 50%;
+  box-shadow: $shadow2;
+}
+.invoice__num {
+  padding: 1.5rem 0 0 0;
+  margin: 0 1rem 0 0;
+  border-bottom: 2px solid black;
+}
+.invoice__num-table {
+  text-align: left;
+}
+//------- Invoice Section 2 ------- //
+.invoice__adress {
+  border-bottom: 2px solid black;
+  margin: 0 0 0 1rem;
+}
+.invoice__adress-text {
+  margin: 0 0 5% 10%;
+}
+.invoice__details {
+  border-bottom: 2px solid black;
+  margin: 0 1rem 0 0;
+}
+//------- Invoice section 3 ------- //
+.invoice__spec {
+  border-bottom: 2px solid black;
+  margin: 0 0 0 1rem;
+
+  h3 {
+    margin-top: 5rem;
+  }
+}
+.invoice__sum {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 2px solid black;
+  margin: 0 1rem 0 0;
+}
+.invoice__sum-table {
+  text-align: right;
+}
+//------- Invoice section 4 ------- //
+.invoice__bet {
+  border-bottom: 2px solid black;
+  margin: 0 0 0 1rem;
+  text-align: left;
+}
+.invoice__total {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 2px solid black;
+  margin: 0 1rem 0 0;
+  text-align: right;
+}
+//------- Invoice footer ------- //
+.invoice__footer {
+  margin: 0 0 1rem 1rem;
+}
+.invoice__footer-detail {
+  text-align: left;
+}
+
+//------- Button animation ------- //
+.invoice__back,
+.invoice__print {
+  transition: transform 1s ease-in-out;
+}
+.invoice__back:hover {
+  transform: translate(-15px);
+}
+.invoice__print:hover {
+  transform: translate(15px);
+}
+
+@media screen and (max-width: 630px) {
+  .invoice {
+    width: auto;
+    margin: 0;
+  }
+
+  .invoice__header-logo {
+    max-width: 5rem;
+  }
+}

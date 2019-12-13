@@ -1,0 +1,152 @@
+@import "variables.scss";
+
+/* NOLLSTÄLLNING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  &:focus {
+    outline: none;
+  }
+}
+body {
+  background: $bg-col;
+  color: $font-col;
+}
+p,
+a,
+div {
+  font-family: "Poppins", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+li {
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+a,
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+// ---- Standard-knapp ---- //
+button {
+  width: 8rem;
+  height: 3rem;
+  background-color: $button-col;
+  border: none;
+  border-radius: 4px;
+  margin: 1rem auto;
+  color: $bg-col;
+  font-size: 1.5rem;
+  font-family: "Barlow Condensed", sans-serif;
+  box-shadow: $shadow2;
+}
+button:hover {
+  background-color: rgb(255, 187, 16);
+  cursor: pointer;
+}
+
+// ---- Meny CSS ---- //
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+.logo {
+  max-width: 6rem;
+  margin: 1rem;
+  border-radius: 50% 50% 50% 50%;
+  box-shadow: $shadow2;
+}
+.menu-toggle {
+  margin: 10px 0 0 0;
+  padding: 0.75em 15px;
+  line-height: 1rem;
+  font-size: 2.5em;
+  color: $font-2nd;
+}
+#nav__close {
+  font-size: 2rem;
+  padding: 1rem;
+  color: $font-2nd;
+}
+#nav__close:hover {
+  color: $button-col;
+}
+.menu-toggle:hover,
+.menu-toggle:focus {
+  color: $button-col;
+}
+.navmenu {
+  position: fixed;
+  display: none;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  overflow-x: visible;
+  z-index: 999;
+}
+.navmenu__ul {
+  list-style: none;
+  padding: 2.5em 0 0;
+  box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+  min-height: 100%;
+  width: 200px;
+  background: $box-col;
+}
+.navmenu__a {
+  display: block;
+  padding: 0.75em 15px;
+  line-height: 1em;
+  font-size: 1.3em;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #383838;
+}
+.navmenu__a:hover {
+  color: $button-col;
+}
+.navmenu .menu-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.navmenu:target {
+  display: block;
+  left: 0;
+  outline: none;
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25);
+}
+.navmenu:target .menu-close {
+  z-index: 1001;
+}
+.navmenu__ul:target {
+  position: relative;
+  z-index: 1000;
+}
+.navmenu:target .backdrop {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@import "footer.scss";
+@import "invoice.scss";
+@import "shoppingcart.scss";
+@import "index.scss";

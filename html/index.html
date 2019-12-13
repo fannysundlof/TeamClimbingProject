@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Startsida</title>
+    <link rel="stylesheet" href="../styles/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../js/index.js" defer></script>
+  </head>
+
+  <body id="startsida">
+    <main class="parallax">
+      <!-- Här börjar menyn -->
+      <header class="header">
+        <a href="/html/index.html#startsida"
+          ><img src="../img/logo.png" alt="logo" class="logo"
+        /></a>
+        <a href="#menu" class="menu-toggle">
+          <span class="fas fa-bars"></span>
+        </a>
+        <nav id="menu" class="navmenu" aria-label="Meny">
+          <a href="#main-menu-toggle" class="menu-close">
+            <span id="nav__close" class="fas fa-times"></span>
+          </a>
+          <ul class="navmenu__ul">
+            <li>
+              <a href="/html/index.html#startsida"
+                ><img src="../img/logo.png" alt="logo" class="logo"
+              /></a>
+            </li>
+            <li>
+              <a href="/html/index.html#startsida" class="navmenu__a">Hem</a>
+            </li>
+            <li>
+              <a href="/html/index.html#produkter" class="navmenu__a"
+                >Produkter</a
+              >
+            </li>
+            <li>
+              <a href="/html/index.html#omoss" class="navmenu__a">Om oss</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#main-menu-toggel" class="backdrop" tabindex="-1" hidden></a>
+      </header>
+      <!--Meny slut -->
+
+      <!-- Välkommen -->
+
+      <section class="landing">
+        <div class="landing__box">
+          <h1>Välkommen till TeamClimbing</h1>
+          <p>
+            TeamClimbing erbjuder klättrings som stärker sammanhållningen på
+            ditt företag! Klättring är en nyttig allroundträning som växer i
+            popularitet. Det är en träningsform som passar många och som både
+            aktiverar dig på ett fysiskt plan men också på ett mentalt.
+          </p>
+          <button class="btn-products">Produkter</button>
+        </div>
+      </section>
+
+      <!-- Våra produkter -->
+
+      <section class="productinfo" id="produkter">
+        <div class="productinfo__card">
+          <div class="productinfo__card-1">
+            <img
+              class="productinfo__card-img"
+              src="../img/small.jpeg"
+              alt="small"
+            />
+            <h2 class="productinfo__card-name">PAKET SMALL</h2>
+            <div class="productinfo__card-desc">
+              <p class="productinfo__card-text">
+                Paketet för er som vill testa på att klättra, kanske för första
+                gången! Ta med hela ditt företag till våra lokaler för en
+                fullspäckad dag med teambuilding, skratt och träning.
+              </p>
+            </div>
+            <p class="productinfo__card-price">10000kr</p>
+            <button class="productinfo__card-btn">Köp</button>
+          </div>
+          <div class="productinfo__card-2">
+            <img
+              class="productinfo__card-img"
+              src="../img/medium.jpeg"
+              alt="medium"
+            />
+            <h2 class="productinfo__card-name">PAKET MEDIUM</h2>
+            <div class="productinfo__card-desc">
+              <p class="productinfo__card-text">
+                En heldag hos oss på TeamClimbing, frukost, utrustning och lunch
+                ingår för hela sällskapet. Det ända ni behöver tänka på att ta
+                med är ett öppet sinne, oömtåliga kläder och ett glatt humör!
+              </p>
+            </div>
+            <p class="productinfo__card-price">12000kr</p>
+            <button class="productinfo__card-btn">Köp</button>
+          </div>
+          <div class="productinfo__card-3">
+            <img
+              class="productinfo__card-img"
+              src="../img/large2.jpeg"
+              alt="large"
+            />
+            <h2 class="productinfo__card-name">PAKET LARGE</h2>
+            <div class="productinfo__card-desc">
+              <p class="productinfo__card-text">
+                Ni har flera vana klättrare eller frilufts personer med er och
+                vill göra en ordentlig utflykt. Vi står för mat och utrustning
+                för hela dagen. Boka den ultimata teambuilding upplevelsen idag!
+              </p>
+            </div>
+            <p class="productinfo__card-price">20000kr</p>
+            <button class="productinfo__card-btn">Köp</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Omdömen -->
+
+      <section class="reviews">
+        <div class="reviews__quote">
+          "Fysisk aktivitet leder till nya ideer och hjälper människor att knyta
+          an till varandra och agera mer avslappnat i grupp."
+        </div>
+      </section>
+
+      <!-- Om oss och vår personal -->
+
+      <section class="omoss" id="omoss">
+        <h1>TeamClimbing Staff</h1>
+        <div class="omoss__container">
+          <div class="omoss__card">
+            <img src="../img/Erik.jpeg" alt="erik" class="omoss__card-img" />
+            <h2>Erik</h2>
+            <p>
+              En glad kille som klättrat sen barnsben, under min senaste
+              klättringsresa besteg jag Mount Everest utan syrgas.
+            </p>
+          </div>
+          <div class="omoss__card">
+            <img src="../img/Nina.jpeg" alt="nina" class="omoss__card-img" />
+            <h2>Nina</h2>
+            <p>
+              Jag brinner för mental hälsa på kontoret och tycker att fysisk
+              aktivitet är den viktigaste grundstenen för ett skarpt sinne.
+            </p>
+          </div>
+          <div class="omoss__card">
+            <img src="../img/James.jpeg" alt="james" class="omoss__card-img" />
+            <h2>James</h2>
+            <p>
+              Born and raised in Austraila where I have been rockclimbing for
+              years, now I'm looking forward to coching you and your team!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__linknav">
+          <div class="linknav__griditem">
+            <img src="../img/logo.png" alt="logo" class="footer__logo" />
+          </div>
+          <ul class="linknav__griditem">
+            <li class="linknav_link"><a href="/html/index.html">Hem</a></li>
+            <li class="linknav_link">
+              <a href="/html/index.html#produkter">Produkter</a>
+            </li>
+            <li class="linknav_link">
+              <a href="/html/index.html#omoss">Om oss</a>
+            </li>
+          </ul>
+          <div class="linknav__griditem">
+            <p><span>&copy;</span>2019 Gävle Entertainment</p>
+          </div>
+        </div>
+        <div class="footer__contact">
+          <div class="contact__griditem">
+            <i class="fas fa-map-marker-alt fa-lg"></i>
+            <p><span>Exempelgatan 25</span>123 45 Exempelstaden</p>
+          </div>
+          <div class="contact__griditem">
+            <i class="fas fa-phone-alt fa-lg"></i>
+            <p>08 - 123 45 67</p>
+          </div>
+          <div class="contact__griditem">
+            <i class="fas fa-envelope fa-lg"></i>
+            <p>Hej@TeamClimbing.se</p>
+          </div>
+        </div>
+        <div class="footer__aboutus">
+          <div class="aboutus-wrapper">
+            <div class="aboutus-container">
+              <h2 class="aboutus__header">Om oss</h2>
+              <p class="aboutus__info">
+                TeamClimbing erbjuder klättrings-paket som stärker
+                sammanhållningen på ditt företag!
+              </p>
+            </div>
+            <ul class="aboutus__icons-container">
+              <li class="aboutus__icon">
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+              </li>
+              <li class="aboutus__icon">
+                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+              </li>
+              <li class="aboutus__icon">
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+              </li>
+              <li class="aboutus__icon">
+                <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Den här visas vid mediaquerias max-width 800px -->
+        <div class="footer__copy-hidden">
+          <p><span>&copy;</span>2019 Gävle Entertainment</p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

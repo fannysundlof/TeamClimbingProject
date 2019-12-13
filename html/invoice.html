@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Faktura</title>
+  <link rel="stylesheet" href="../styles/css/styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="../js/invoice.js" defer></script>
+</head>
+
+<body>
+
+  <section class="container">
+
+    <!-- Fakturan -->
+    <section class="invoice">
+      <!-- Faktura header med logga och information om fakturan. Datum, fakturanummer, betalningsvilkor, förfallodatumosv -->
+      <header class="invoice__header">
+        <img class="invoice__header-logo" src="../img/logo.png" alt="logo" />
+      </header>
+      <header class="invoice__num">
+        <table class="invoice__num-table">
+          <tr>
+            <th>Datum:</th>
+            <td>
+              <div class="invoice__num-date"></div>
+            </td>
+          </tr>
+          <tr>
+            <th>Fakturanummer:</th>
+            <td>
+              <div class="invoice__num-invnr"></div>
+            </td>
+          </tr>
+          <tr>
+            <th>Betalningsvilkor:</th>
+            <td>30 dagar</td>
+          </tr>
+          <tr>
+            <th>Förfallodatum:</th>
+            <td>
+              <div class="invoice__num-ff">JS</div>
+            </td>
+          </tr>
+        </table>
+      </header>
+
+      <!-- Här hamnar informationen som fylls i i varukorg formet-->
+
+      <section class="invoice__adress">
+        <div class="invoice__adress-text">
+          <h4>Adress:</h4>
+          <div class="invoice__adress-fnamn"></div>
+          <div class="invoice__adress-gata"></div>
+          <div class="invoice__adress-postnr"></div>
+        </div>
+      </section>
+
+      <!-- Kontakt uppgifter som fylls i i varukorgen formet -->
+
+      <section class="invoice__details">
+        <div>
+          <h4>Kontakt:</h4>
+          <div class="invoice__adress-pers"></div>
+          <div class="invoice__adress-tel"></div>
+          <div class="invoice__adress-mail"></div>
+        </div>
+      </section>
+      <!-- Den valda produkten och eventulla tillval tillsammans med evt meddelande som fylls i i varukorgen -->
+      <section class="invoice__spec">
+        <table>
+          <tr>
+            <th>
+              Produkt
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <div class="invoice__spec-produkt">Produktnamn</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="invoice__spec-antal"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="invoice__spec-tillval"></div>
+            </td>
+          </tr>
+        </table>
+
+        <h3>Meddelande:</h3>
+        <div class="invoice__spec-med"></div>
+      </section>
+
+      <!-- Summa av den valda produkten-->
+
+      <section class="invoice__sum">
+        <table class="invoice__sum-table">
+          <tr>
+            <th>Summa</th>
+          </tr>
+          <tr>
+            <td>
+              <div class="invoice__sum-produkt">produktpris</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="invoice__sum-antal"></div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="invoice__sum-tillval"></div>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Att betala -->
+
+      <section class="invoice__bet">
+        <table>
+          <tr>
+            <th>Ex moms:</th>
+          </tr>
+          <tr>
+            <th>moms (25%):</th>
+          </tr>
+          <tr>
+            <th>Totalt att betala:</th>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Total summa av produkt + tillval med och utan moms-->
+
+      <section class="invoice__total">
+        <table>
+          <tr>
+            <td>
+              <div class="invoice__total-exmoms">0 kr</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="invoice__total-moms">0 kr</div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="invoice__total-total"></div>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Företagsadress -->
+
+      <footer class="invoice__footer">
+        <table>
+          <tr>
+            <th>TEAM CLIMBING</th>
+          </tr>
+          <tr>
+            <td>Tulegatan 41</td>
+          </tr>
+          <tr>
+            <td>123 45</td>
+          </tr>
+        </table>
+      </footer>
+
+      <!-- Inbetalningsinformation och kontakt -->
+
+      <footer class="invoice__footer-detail">
+        <table>
+          <tr>
+            <th>Org-nr</th>
+            <td>123456-7891</td>
+          </tr>
+          <tr>
+            <th>Bankgiro</th>
+            <td>123-1234</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>hej@teamclimbing.se</td>
+          </tr>
+        </table>
+      </footer>
+    </section>
+
+    <!-- Skriv ut eller gå tillbaka -->
+    <div class="btns">
+      <button class="invoice__back">
+        <i class="fas fa-angle-double-left fa-2px" id="anim1"></i> Tillbaka
+      </button>
+      <button class="invoice__print">
+        Print <i class="fas fa-angle-double-right fa-2px" id="anim2"></i>
+      </button>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__linknav">
+      <div class="linknav__griditem">
+        <img src="../img/logo.png" alt="logo" class="footer__logo">
+      </div>
+      <ul class="linknav__griditem">
+        <li class="linknav_link"><a href="/html/index.html">Hem</a></li>
+        <li class="linknav_link"><a href="/html/index.html#produkter">Produkter</a></li>
+        <li class="linknav_link"><a href="/html/index.html#omoss">Om oss</a></li>
+      </ul>
+      <div class="linknav__griditem">
+        <p><span>&copy;</span>2019 Gävle Entertainment</p>
+      </div>
+    </div>
+    <div class="footer__contact">
+      <div class="contact__griditem">
+        <i class="fas fa-map-marker-alt fa-lg"></i>
+        <p><span>Exempelgatan 25</span>123 45 Exempelstaden</p>
+      </div>
+      <div class="contact__griditem">
+        <i class="fas fa-phone-alt fa-lg"></i>
+        <p>08 - 123 45 67</p>
+
+      </div>
+      <div class="contact__griditem">
+        <i class="fas fa-envelope fa-lg"></i>
+        <p>Hej@TeamClimbing.se</p>
+      </div>
+    </div>
+    <div class="footer__aboutus">
+      <div class="aboutus-wrapper">
+        <div class="aboutus-container">
+          <h2 class="aboutus__header">Om oss</h2>
+          <p class="aboutus__info">
+            TeamClimbing erbjuder klättrings-paket som stärker
+            sammanhållningen på ditt företag!
+          </p>
+        </div>
+        <ul class="aboutus__icons-container">
+          <li class="aboutus__icon"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+          <li class="aboutus__icon"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+          <li class="aboutus__icon"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+          <li class="aboutus__icon"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Den här visas vid mediaquerias max-width 800px -->
+    <div class="footer__copy-hidden">
+      <p><span>&copy;</span>2019 Gävle Entertainment</p>
+    </div>
+
+  </footer>
+</body>
+
+</html>

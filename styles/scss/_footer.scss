@@ -1,0 +1,186 @@
+// FOOTER
+
+.footer {
+  background: $box-col;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 80%;
+  padding: 2rem;
+  gap: 5px;
+}
+
+.footer__linknav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.linknav__griditem {
+  display: flex;
+
+  p {
+    color: $font-2nd;
+  }
+}
+
+.footer__linknav > ul {
+  list-style: none;
+  display: flex;
+  color: $font-col;
+}
+
+.linknav_link a {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: $font-col;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__logo {
+  max-width: 7rem;
+  max-height: 7rem;
+  margin: 1rem;
+  border-radius: 50% 50% 50% 50%;
+  box-shadow: $shadow2;
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contact__griditem {
+  display: flex;
+  align-items: center;
+  width: 220px;
+
+  span {
+    display: block;
+    font-weight: lighter;
+  }
+
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bg-col;
+    min-height: 35px;
+    min-width: 35px;
+    border-radius: 100%;
+    margin: 10px;
+  }
+}
+
+.footer__aboutus {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  color: $font-col;
+  align-items: center;
+}
+
+.aboutus-wrapper {
+  div {
+    width: 16rem;
+  }
+
+  p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.aboutus__icons-container {
+  display: flex;
+
+  li {
+    padding-top: 10px;
+    padding-right: 30px;
+  }
+}
+
+.footer__aboutus a {
+  text-decoration: none;
+  color: $font-col;
+  &:hover{
+    color: $button-col;
+  }
+}
+
+.footer__aboutus p {
+  color: $font-2nd;
+}
+
+.footer__copyright {
+  text-align: center;
+  font-size: 80%;
+}
+
+.footer__copy-hidden{
+  display: none;
+  p {
+    text-align: center;
+    color: $font-2nd;
+  }
+  
+}
+
+
+
+// MEDIAQUERIES
+
+@media screen and (max-width: 1000px) {
+  .footer {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 802px) {
+  .footer {
+
+    grid-template-columns: 1fr;
+    gap: 30px;
+
+  }
+
+  .footer__copy-hidden{
+    display: block;
+    
+  }
+
+  .linknav__griditem {
+  
+    p {
+      display: none;
+    }
+  }
+
+
+  .footer__contact{
+  }
+
+  .footer__linknav{
+  }
+  .footer__contact{
+    grid-row: 3/4;
+  }
+  .footer__aboutus{
+    grid-row: 2/3;
+
+    .aboutus__icons-container{
+      justify-content: space-evenly;
+
+      .footer__aboutus__icon{
+        padding: 0;
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,506 @@
+.shoppingcart_body {
+  background: $bg-col;
+  margin: 0;
+  padding: 0;
+}
+
+// -- Överblick på vald produkt etc
+
+.overview-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.overview-section {
+  box-shadow: $shadow2;
+  border-radius: 15px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  background: $box-col;
+  padding: 1.8rem;
+  height: 627px;
+  width: 900px;
+}
+
+.overview-container {
+  padding: 1.4rem;
+  background: $box-col;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+
+// ----------- Vald produkt ---------- //
+.overview__product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chosenproduct__header {
+  font-size: 3.15rem;
+}
+
+.chosenproduct__info-container {
+  background: $box-col;
+  width: 18rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  .product__header {
+    padding-bottom: 5px;
+  }
+  .product__info {
+    font-size: 0.8rem;
+    padding-bottom: 5px;
+
+    p {
+      margin: 0; // Resettar margin på p-class som hämtas från index.html.
+    }
+  }
+}
+
+.product__img {
+  height: auto;
+  width: 100%;
+  max-width: 380px;
+  max-height: 320px;
+  border: 2px solid rgba(255, 255, 255, 0.911);
+}
+
+//------ (Antal , Tillval och totalsumma) ------//
+.overview__info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.options-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.options-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: flex-end;
+  width: 18rem;
+  height: 21rem;
+}
+
+// ----------- Antal deltagare (slider) ---------- //
+.slider__qty-container {
+  text-align: center;
+}
+
+.slider-container {
+  display: flex;
+}
+
+.slider__input {
+  background: $box-col;
+  border-radius: 25px;
+  width: 100%;
+  margin: 6.55px 0;
+  box-shadow: $shadow2;
+
+  //----- Webkit
+  -webkit-appearance: none;
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6.9px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
+    background: #efac00;
+    border-radius: 25px;
+    border: 0px solid rgba(51, 67, 80, 0);
+  }
+  &::-webkit-slider-thumb {
+    box-shadow: 1.4px 1.4px 3.1px rgba(51, 67, 80, 0.76),
+      0px 0px 1.4px rgba(61, 80, 96, 0.76);
+    border: 2.1px solid rgba(51, 67, 80, 0);
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+    background: #efac00;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -6.55px;
+  }
+  &:focus::-webkit-slider-runnable-track {
+    background: #ffc01e;
+  }
+
+  //----- Firefox
+  &::-moz-range-track {
+    width: 100%;
+    height: 6.9px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
+    background: #efac00;
+    border-radius: 25px;
+    border: 0px solid rgba(51, 67, 80, 0);
+  }
+  &::-moz-range-thumb {
+    box-shadow: 1.4px 1.4px 3.1px rgba(51, 67, 80, 0.76),
+      0px 0px 1.4px rgba(61, 80, 96, 0.76);
+    border: 2.1px solid rgba(51, 67, 80, 0);
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+    background: #efac00;
+    cursor: pointer;
+  }
+  &:focus::-moz-range-track {
+    background: #ffc01e;
+  }
+  // Tar bort default-border på focus.
+  &::-moz-focus-outer {
+    border: 0;
+  }
+  // Gömmer number picker för Firefox
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  //----- Internet Explorer
+  &::-ms-track {
+    width: 100%;
+    height: 6.9px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  &::-ms-fill-lower {
+    background: #c18b00;
+    border: 0px solid rgba(51, 67, 80, 0);
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
+  }
+  &::-ms-fill-upper {
+    background: #efac00;
+    border: 0px solid rgba(51, 67, 80, 0);
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #002200, 0px 0px 0px #003c00;
+  }
+  &::-ms-thumb {
+    box-shadow: 1.4px 1.4px 3.1px rgba(51, 67, 80, 0.76),
+      0px 0px 1.4px rgba(61, 80, 96, 0.76);
+    border: 2.1px solid rgba(51, 67, 80, 0);
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+    background: #efac00;
+    cursor: pointer;
+    height: 6.9px;
+  }
+  &:focus::-ms-fill-upper {
+    background: #ffc01e;
+  }
+  &:focus::-ms-fill-lower {
+    background: #efac00;
+  }
+}
+
+.slider__output-container {
+  text-align: center;
+
+  span::after {
+    content: " kr";
+  }
+}
+
+// ----------- Tillval ---------- //
+.addon__checkbox {
+  display: none;
+
+  &:checked + div {
+    background: $button-col;
+    box-shadow: $shadow;
+    border: 1px solid $button-col;
+  }
+}
+
+.addon__info-container {
+  border: 1px solid rgba(211, 211, 211, 0.486);
+  border-radius: 4px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  cursor: pointer;
+  height: 3rem;
+
+  &:hover {
+    transition-timing-function: ease;
+    transition: 0.3s;
+    background: rgba(239, 171, 0, 0.637);
+  }
+
+  .addon__title {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .addon__desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.72rem;
+  }
+}
+
+.addon__price-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .addon__price::after {
+    content: " kr*";
+  }
+}
+
+.overview__fineprint{
+  font-size: 0.5rem;
+}
+
+// ------ Totalsumma ex moms ------ //
+
+.total-container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-top: 1.2rem;
+}
+
+.total__spec {
+  list-style: none;
+  margin: 0;
+  text-align: right;
+  width: 18rem;
+  font-size: 90%;
+
+  // Produktens startpris- & antal personer-innertext.
+  .total__product-desc {
+    color: white;
+  }
+  .total__product-qty {
+    color: white;
+  }
+
+  li {
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    color: #f3c245;
+
+    span::after {
+      content: " kr";
+    }
+
+    span {
+      float: right;
+    }
+  }
+}
+
+.total__header {
+  text-align: left;
+  font-size: 1.9rem;
+  width: 18rem;
+  border-top: 2px solid white;
+  margin-top: 4px;
+
+  span {
+    float: right;
+
+    &::after {
+      content: " kr";
+    }
+  }
+}
+
+// ------ Gå vidare ------ //
+
+.continue-section {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: auto;
+  margin-bottom: 10rem;
+}
+
+.continue__warningtext {
+  color: red;
+}
+
+// ------ Form för kunduppgifter ------ //
+
+.customerform-section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customerform-wrapper {
+  box-shadow: $shadow2;
+  border-radius: 5px;
+  margin: 0 auto;
+  background: $box-col;
+  max-height: 100%;
+  max-width: 22rem;
+  display: none;
+  grid-template-rows: repeat(7, 1fr) 2fr;
+  gap: 20px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.customerform__header {
+  text-align: center;
+}
+
+.customerform-input {
+  height: 100%;
+  width: 20rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1rem; /* för att "nollställa" font-size. */
+  background: $box-col;
+  border: none; // Tar bort default input border
+  border-bottom: 1px solid white;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  resize: none;
+}
+
+::placeholder {
+  color: $font-2nd;
+}
+
+// Tar bort pilarna i number-input i form.
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// ------ Checkout ------ //
+
+.checkout-section {
+  text-align: center;
+  background: $box-col;
+}
+
+.checkout__checkbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: $font-col;
+  }
+
+  a:visited {
+    color: $font-col;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.checkbox__input {
+  margin: 0.2rem;
+}
+
+.checkout__warningtext {
+  color: red;
+}
+
+// -------  Animationer ------- //
+
+.total__spec li {
+  animation: fadein 2s;
+  -moz-animation: fadein 2s; /* Firefox */
+  -webkit-animation: fadein 2s; /* Safari och Chrome */
+}
+
+.customerform-wrapper {
+  animation: fadein 2.5s;
+  -moz-animation: fadein 2.5s; /* Firefox */
+  -webkit-animation: fadein 2.5s; /* Safari och Chrome */
+}
+
+// -- Keyframes
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadein {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// --------- MEDIAQUERIES -------- //
+
+@media screen and (max-width: 1380px) {
+  .overview-section {
+    margin-top: 7.7rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .overview-container {
+    border-radius: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .overview__info-container {
+      padding-left: 0px;
+      align-items: center;
+    }
+
+    .overview__product-container {
+      justify-content: space-evenly;
+    }
+  }
+
+  .overview-section {
+    height: auto;
+    width: auto;
+    padding: 0;
+  }
+}

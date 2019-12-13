@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Varukorg</title>
+    <!-- FONT från googlefonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,600|Poppins&display=swap" rel="stylesheet">
+    <!-- Ikoner från font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <script src="../js/shoppingcart.js" defer></script>
+    <link rel="stylesheet" href="/styles/css/styles.css">
+</head>
+
+<body class="shoppingcart_body">
+
+    <header class="header">
+            <a href="/html/index.html#startsida"><img src="../img/logo.png" alt="logo" class="logo"/></a>
+        <a href="#menu" class="menu-toggle">
+            <span class="fas fa-bars"></span>
+        </a>
+        <nav id="menu" class="navmenu" aria-label="Meny">
+            <a href="#main-menu-toggle" class="menu-close">
+                <span id="nav__close" class="fas fa-times"></span>
+            </a>
+            <ul class="navmenu__ul">
+                <li><a href="/html/index.html#startsida"><img src="../img/logo.png" alt="logo" class="logo"></a>
+                </li>
+                <li><a href="/html/index.html#startsida" class="navmenu__a">Hem</a></li>
+                <li><a href="/html/index.html#produkter" class="navmenu__a">Produkter</a></li>
+                <li><a href="/html/index.html#omoss" class="navmenu__a">Om oss</a></li>
+            </ul>
+        </nav>
+        <a href="#main-menu-toggel" class="blackdrop" tabindex="-1" hidden></a>
+    </header>
+
+    <!-- Överblick på vald produkt etc -->
+    <div class="overview-wrapper">
+        <section class="overview-section">
+            <div class="overview-container">
+
+                <!----------- Vald Produkt ---------->
+                <div class="overview__product-container">
+                    <h1 class="chosenproduct__header">Din valda produkt: </h1>
+                    <div class="chosenproduct__info-container">
+                        <h1 class="product__header">
+                            <!-- Produktens namn från JS-->
+                        </h1>
+                        <div class="product__info">
+                            <!-- Produktens beskrivning från JS -->
+                        </div>
+                    </div>
+                    <img class="product__img" src="#" alt="Produktbild"><!-- Hämtar src från JS-->
+                </div>
+
+                <!----------- (Antal deltagare, Tillval och totalsumma) ---------->
+                <div class="overview__info-container">
+
+                    <!----------- Antal deltagare och Tillval ---------->
+                    <div class="options-wrapper">
+                        <div class="options-container">
+                            <!----- Antal deltagare (Slider) ------>
+                            <div class="options__slider">
+                                <p class="slider__qty-container">
+                                    <span class="slider__header">Antal personer:</span>
+                                    <span class="slider__qty">
+                                        <!-- Antal från JS --></span>
+                                </p>
+                                <div class="slider-container">
+                                    <input type="range" min="1" max="20" step="1" value="1" class="slider__input">
+                                </div>
+                                <p class="slider__output-container">
+                                    <span class="slider__output">
+                                        <!-- Värde från slider via JS --></span>
+                                </p>
+                            </div>
+                            <!------ Tillval ------>
+                            <div class="options__addon"> 
+                                    <input type="checkbox" class="addon__checkbox"> <!-- checkas i via JS -->
+                                    <div class="addon__info-container">
+                                        <h3 class="addon__title">Foto</h3>
+                                        <p class="addon__desc">Föreviga er upplevelse!</p>
+                                        <p class="addon__price-container">
+                                            <span class="addon__price">49</span>
+                                        </p>
+                                    </div>
+                            </div>
+                            <div class="options__addon">
+                                    <input type="checkbox" class="addon__checkbox"> <!-- checkas i via JS -->
+                                    <div class="addon__info-container">
+                                        <h3 class="addon__title">T-shirt</h3>
+                                        <p class="addon__desc">Maximera teamkänslan!</p>
+                                        <p class="addon__price-container">
+                                            <span class="addon__price">99</span>
+                                        </p>
+                                    </div>
+                            </div>
+                            <div class="options__addon">
+                                    <input type="checkbox" class="addon__checkbox"> <!-- checkas i via JS -->
+                                    <div class="addon__info-container">
+                                        <h3 class="addon__title">Fest</h3>
+                                        <p class="addon__desc">Avsluta med AfterClimb!</p>
+                                        <p class="addon__price-container">
+                                            <span class="addon__price">399</span>
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---- Totalsumma ex moms ----->
+                    <div class="total-container">
+                        <ul class="total__spec">
+                            <li class="total__product-desc">Startpris
+                                <span class="total__product-price"></span>
+                            </li>
+                            
+                            <li class="total__product-qty">1 deltagare <span class="total__addon-price">500</span></li>
+                        </ul>
+                        <h1 class="total__header">Totalt ex. moms <span class="total__sum"></span></h1>
+                        <p class="overview__fineprint">* priset gäller per person.</p>
+                    </div>
+                </div> 
+            </div>
+        </section> 
+    </div> <!-- Overview wrapper ends -->
+
+    <!-- Gå vidare-sektion -->
+    <section class="continue-section">
+        <!-- Här läggs meddelande ifall man inte valt antal personer -->
+        <p class="continue__warningtext"></p>
+        <button id="continue__btn">Gå vidare</button>
+    </section>
+
+    <!-- Form för kunduppgifter -->
+    <section class="customerform-section" id="customerform-section">
+        <div class="customerform-wrapper">
+            <h2 class="customerform__header">Fyll i din info:</h2>
+            <div class="customerform__griditem"><input type="text" class="customerform-input" id="business_name"
+                    placeholder="Företagsnamn">
+            </div>
+            <div class="customerform__griditem"><input type="text" class="customerform-input" id="street"
+                    placeholder="Gata"></div>
+            <div class="customerform__griditem"><input type="text" class="customerform-input" id="zip"
+                    placeholder="Postadress"></div>
+            <div class="customerform__griditem"><input type="text" class="customerform-input" id="contact_name"
+                    placeholder="Kontaktperson">
+            </div>
+            <div class="customerform__griditem"><input type="number" class="customerform-input" id="contact_phone"
+                    placeholder="Mobilnummer">
+            </div>
+            <div class="customerform__griditem"><input type="email" class="customerform-input" id="contact_email"
+                    placeholder="Emailadress">
+            </div>
+            <div class="customerform__griditem"><textarea class="customerform-input" id="message"
+                    placeholder="Meddelande"></textarea>
+            </div>
+
+
+            <!---- Checkout ---->
+            <section class="checkout-section" id="checkout-section">
+
+                <!-- Här läggs meddelande ifall terms ej är lästa -->
+                <p class="checkout__warningtext"></p>
+                <div class="checkout__checkbox-container">
+                    <input type="checkbox" class="checkbox__input">
+                    <p>Jag har läst igenom <a href="#"
+                            onClick="MyWindow=window.open('/html/terms.html','MyWindow','width=600,height=600'); return false;">köpvillkoren</a>.
+                    </p>
+                </div>
+                <button id="checkout__btn">Köp</button>
+            </section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__linknav">
+            <div class="linknav__griditem">
+                <img src="../img/logo.png" alt="logo" class="footer__logo">
+            </div>
+            <ul class="linknav__griditem">
+                <li class="linknav_link"><a href="/html/index.html">Hem</a></li>
+                <li class="linknav_link"><a href="/html/index.html#produkter">Produkter</a></li>
+                <li class="linknav_link"><a href="/html/index.html#omoss">Om oss</a></li>
+            </ul>
+            <div class="linknav__griditem">
+                <p><span>&copy;</span>2019 Gävle Entertainment</p>
+            </div>
+        </div>
+        <div class="footer__contact">
+            <div class="contact__griditem">
+                <i class="fas fa-map-marker-alt fa-lg"></i>
+                <p><span>Exempelgatan 25</span>123 45 Exempelstaden</p>
+            </div>
+            <div class="contact__griditem">
+                <i class="fas fa-phone-alt fa-lg"></i>
+                <p>08 - 123 45 67</p>
+
+            </div>
+            <div class="contact__griditem">
+                <i class="fas fa-envelope fa-lg"></i>
+                <p>Hej@TeamClimbing.se</p>
+            </div>
+        </div>
+        <div class="footer__aboutus">
+            <div class="aboutus-wrapper">
+                <div class="aboutus-container">
+                    <h2 class="aboutus__header">Om oss</h2>
+                    <p class="aboutus__info">
+                        TeamClimbing erbjuder klättrings-paket som stärker
+                        sammanhållningen på ditt företag!
+                    </p>
+                </div>
+                <ul class="aboutus__icons-container">
+                    <li class="aboutus__icon"><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                    <li class="aboutus__icon"><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+                    <li class="aboutus__icon"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+                    <li class="aboutus__icon"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Den här visas vid mediaquerias max-width 800px -->
+        <div class="footer__copy-hidden">
+            <p><span>&copy;</span>2019 Gävle Entertainment</p>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
